@@ -1,20 +1,20 @@
-# Enable Windows Photo Viewer on Windows 10/11 (with Auto-Admin Request)
+# Enable Windows Photo Viewer on Windows 10/11
 
-This script will **enable the classic Windows Photo Viewer** and set it as the **default viewer** for all common image formats.  
-It also automatically requests **Administrator privileges (UAC prompt)**, so you don’t need to right-click → *Run as administrator*.
+This script will **enable the old Windows Photo Viewer** on Windows 10/11.  
+By default, Microsoft hides it in favor of the new Photos app, but the viewer is still included in the system.
 
 ---
 
 ## 📂 Files
 
-- `Enable_PhotoViewer_All_Admin.bat` → The script that updates Windows Registry.
+- `Enable_PhotoViewer.bat` → The script that adds registry entries to enable Windows Photo Viewer.
 
 ---
 
 ## ⚠️ Requirements
 
 - Windows 10 or Windows 11.
-- You must accept the **UAC (User Account Control)** prompt when it appears.
+- Administrator rights (the script will auto-request admin if not already).
 
 ---
 
@@ -22,51 +22,41 @@ It also automatically requests **Administrator privileges (UAC prompt)**, so you
 
 1. **Download or create the BAT file**
    - Open **Notepad**.
-   - Copy the code from `Enable_PhotoViewer_All_Admin.bat`.
+   - Copy the code from `Enable_PhotoViewer.bat`.
    - Save it as:
      ```
-     Enable_PhotoViewer_All_Admin.bat
+     Enable_PhotoViewer.bat
      ```
      (Choose **Save as type: All Files**).
 
 2. **Run the script**
    - Double-click the `.bat` file.  
-   - Windows will show a **UAC prompt** asking for Administrator permission.  
-   - Click **Yes** to continue.  
+   - If prompted by UAC, click **Yes** to allow.  
+   - The registry entries will be added automatically.
 
-3. **Wait for confirmation**
-   - If successful, you will see:
+3. **Result**
+   - You will now see **Windows Photo Viewer** in the **Open with** menu when you right-click an image.  
+   - Example:  
      ```
-     Windows Photo Viewer has been enabled and set as default for:
-     JPG, JPEG, PNG, BMP, GIF, TIF, TIFF, WEBP, ICO
+     Open with → Windows Photo Viewer
      ```
 
 ---
 
-## 📸 Supported Image Formats
+## 📸 Setting as Default (Optional)
 
-After running, these image types will open by default with **Windows Photo Viewer**:
+To make Windows Photo Viewer the default app for images:
 
-- `.jpg`
-- `.jpeg`
-- `.png`
-- `.bmp`
-- `.gif`
-- `.tif`
-- `.tiff`
-- `.webp`
-- `.ico`
+1. Open **Settings → Apps → Default apps**.  
+2. Scroll to **Photo viewer**.  
+3. Select **Windows Photo Viewer**.  
 
 ---
 
 ## 🔄 Reverting Back
 
-If you want to restore the **default Photos app**:
-
-1. Open **Settings** → **Apps** → **Default apps**.  
-2. Scroll to **Photo viewer**.  
-3. Select **Photos (default)** or another app.
+If you want to remove Photo Viewer again, you can reset the default photo viewer in Settings, or create a script to delete the registry entries.
 
 ---
 
-✅ Done! Now your Windows 10/11 will always use the **classic Windows Photo Viewer** 🎉
+✅ Done! Now your Windows 10/11 has the classic **Windows Photo Viewer** back 🎉
