@@ -1,41 +1,44 @@
-# Enable Windows Photo Viewer on Windows 10/11
+# 🖼️ Enable Windows Photo Viewer on Windows 10/11
 
-This script will **enable the old Windows Photo Viewer** on Windows 10/11.  
+[![Run Script](https://img.shields.io/badge/Run%20Directly-PowerShell-blue?logo=powershell)](#-option-2--run-directly-powershell-one-liner)  
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+This script will **re-enable the old Windows Photo Viewer** on Windows 10/11.  
 By default, Microsoft hides it in favor of the new Photos app, but the viewer is still included in the system.
 
 ---
 
 ## 📂 Files
 
-- `Enable_PhotoViewer.bat` → The script that adds registry entries to enable Windows Photo Viewer.
+- `Enable_PhotoViewer.bat` → Adds registry entries to enable Windows Photo Viewer.
 
 ---
 
 ## ⚠️ Requirements
 
-- Windows 10 or Windows 11.
-- Administrator rights (the script will auto-request admin if not already).
+- Windows 10 or Windows 11  
+- Administrator rights (script auto-requests if not already)
 
 ---
 
 ## 🚀 How to Use
 
+### ✅ Option 1 — Manual Run
 1. **Download or create the BAT file**
-   - Open **Notepad**.
-   - Copy the code from `Enable_PhotoViewer.bat`.
-   - Save it as:
+   - Open **Notepad**
+   - Copy the code from [`Enable_PhotoViewer.bat`](Enable_PhotoViewer.bat)
+   - Save as:
      ```
      Enable_PhotoViewer.bat
      ```
-     (Choose **Save as type: All Files**).
+     (Choose **Save as type: All Files**)
 
 2. **Run the script**
-   - Double-click the `.bat` file.  
-   - If prompted by UAC, click **Yes** to allow.  
-   - The registry entries will be added automatically.
+   - Right-click → **Run as administrator**  
+   - The registry entries will be added automatically
 
 3. **Result**
-   - You will now see **Windows Photo Viewer** in the **Open with** menu when you right-click an image.  
+   - You will now see **Windows Photo Viewer** in the **Open with** menu  
    - Example:  
      ```
      Open with → Windows Photo Viewer
@@ -43,20 +46,9 @@ By default, Microsoft hides it in favor of the new Photos app, but the viewer is
 
 ---
 
-## 📸 Setting as Default (Optional)
+### ⚡ Option 2 — Run Directly (PowerShell One-Liner)
 
-To make Windows Photo Viewer the default app for images:
+Paste this in **PowerShell (Admin)**:
 
-1. Open **Settings → Apps → Default apps**.  
-2. Scroll to **Photo viewer**.  
-3. Select **Windows Photo Viewer**.  
-
----
-
-## 🔄 Reverting Back
-
-If you want to remove Photo Viewer again, you can reset the default photo viewer in Settings, or create a script to delete the registry entries.
-
----
-
-✅ Done! Now your Windows 10/11 has the classic **Windows Photo Viewer** back 🎉
+```powershell
+irm "https://raw.githubusercontent.com/duyxyz/Enable_PhotoViewer/main/Enable_PhotoViewer.BAT" -OutFile "$env:TEMP\Enable_PhotoViewer.bat"; Start-Process "$env:TEMP\Enable_PhotoViewer.bat" -Verb RunAs
