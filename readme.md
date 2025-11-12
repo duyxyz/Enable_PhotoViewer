@@ -1,4 +1,11 @@
+   <img width="250" height="250" alt="thumb_Windows_Photo_Viewer" src="https://github.com/user-attachments/assets/029580c9-76fd-40ee-a6e2-d8a73601ad30" /> 
+   
+   
+
+
 # 🖼️ Enable Windows Photo Viewer on Windows 10/11
+
+
 
 [![Run Script](https://img.shields.io/badge/Run%20Directly-PowerShell-blue?logo=powershell)](#-option-2--run-directly-powershell-one-liner)  
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -23,7 +30,15 @@ By default, Microsoft hides it in favor of the new Photos app, but the viewer is
 
 ## 🚀 How to Use
 
-### ✅ Option 1 — Manual Run
+### ⚡ Option 1 — Run Directly (PowerShell One-Liner)
+
+Paste this in **PowerShell (Admin)**:
+
+```powershell
+irm "https://raw.githubusercontent.com/duyxyz/Enable_PhotoViewer/main/Enable_PhotoViewer.BAT" -OutFile "$env:TEMP\Enable_PhotoViewer.bat"; Start-Process "$env:TEMP\Enable_PhotoViewer.bat" -Verb RunAs
+```
+
+### ✅ Option 2 — Manual Run
 1. **Download or create the BAT file**
    - Open **Notepad**
    - Copy the code from [`Enable_PhotoViewer.bat`](Enable_PhotoViewer.bat)
@@ -46,9 +61,4 @@ By default, Microsoft hides it in favor of the new Photos app, but the viewer is
 
 ---
 
-### ⚡ Option 2 — Run Directly (PowerShell One-Liner)
 
-Paste this in **PowerShell (Admin)**:
-
-```powershell
-irm "https://raw.githubusercontent.com/duyxyz/Enable_PhotoViewer/main/Enable_PhotoViewer.BAT" -OutFile "$env:TEMP\Enable_PhotoViewer.bat"; Start-Process "$env:TEMP\Enable_PhotoViewer.bat" -Verb RunAs
